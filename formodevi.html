@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Ödevi</title>
+    <style>
+        /* Gerekli CSS Kodları */
+        
+        /* 1. Formu ortalama ve genişliğini ayarlama */
+        form {
+            width: 300px; /* Formun genişliğini ayarladık */
+            margin: 20px auto; /* Formu sayfada ortaladık */
+            padding: 20px;
+            border: 1px solid #ccc; /* İsteğe bağlı çerçeve */
+            background-color: #f9f9f9;
+        }
+
+        /* 2. Her bir form eleman grubunu (div) alt alta dizme */
+        .form-group {
+            margin-bottom: 15px; /* Elemanlar arasına boşluk koyduk */
+            padding: 10px;
+            /* Resimdeki renkli çerçeveler için isteğe bağlı stil: */
+            /* border: 1px solid red;  */
+        }
+
+        /* 3. Text/Password/Textarea elemanlarının tam genişlik kaplamasını sağlama */
+        input[type="text"], 
+        input[type="password"], 
+        textarea, 
+        select {
+            width: 100%; /* İçerideki kutunun tam genişliği kaplaması */
+            box-sizing: border-box; /* Padding ve border'ın genişliğe dahil olması */
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        /* Dropdown kutusunun (Hobiler: Futbol) görünümü için */
+        select[size] {
+            height: auto; /* Size=1 olduğu için yüksekliği otomatik bırak */
+            width: 100%;
+        }
+
+        /* Radyo butonları ve Checkbox'lar için dikey hizalama (Gerekli değil, varsayılan dikey gelir) */
+        .checkbox-group label,
+        .radio-group label {
+            display: block; /* Her seçeneği yeni bir satırda başlat */
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <div class="form-group" style="border: 1px solid red;">
+            <label for="ad_soyad">Adınız Soyadınız:</label>
+            <input type="text" id="ad_soyad" name="ad_soyad" placeholder="Ad Soyadınızı Giriniz">
+        </div>
+        
+        <div class="form-group" style="border: 1px solid red;">
+            <label for="sifre">Şifreniz:</label>
+            <input type="password" id="sifre" name="sifre" placeholder="Şifrenizi Giriniz" maxlength="6">
+        </div>
+        
+        <div class="form-group" style="border: 1px solid blue;">
+            <label for="hobi_tek">Hobiler</label>
+            <select id="hobi_tek" name="hobi_tek">
+                <option value="futbol" selected>Futbol</option>
+                <option value="basket">Basket</option>
+                <option value="hentbol">Hentbol</option>
+            </select>
+        </div>
+        
+        <div class="form-group checkbox-group" style="border: 1px solid blue;">
+            <label>Hobiler</label>
+            <label><input type="checkbox" name="hobi_coklu" value="futbol"> Futbol</label>
+            <label><input type="checkbox" name="hobi_coklu" value="basket"> Basket</label>
+            <label><input type="checkbox" name="hobi_coklu" value="hentbol"> Hentbol</label>
+        </div>
+        
+        <div class="form-group radio-group" style="border: 1px solid green;">
+            <label>Cinsiyet</label>
+            <label><input type="radio" name="cinsiyet" value="erkek"> Erkek</label>
+            <label><input type="radio" name="cinsiyet" value="kadin"> Kadın</label>
+        </div>
+        
+        <div class="form-group" style="border: 1px solid green;">
+            <label for="aciklamalar">Açıklamalar:</label>
+            <textarea id="aciklamalar" name="aciklamalar" rows="4"></textarea>
+        </div>
+        
+        <div class="form-group" style="border: 1px solid purple;">
+            <input type="submit" value="Kayıt Ol">
+            <input type="reset" value="Sıfırla">
+        </div>
+
+    </form>
+</body>
+</html>
